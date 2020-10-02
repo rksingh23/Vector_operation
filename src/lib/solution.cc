@@ -2,65 +2,28 @@
 #include <iostream>
 #include <bits/stdc++.h>
 
-
-std::vector<int> Solution::Prime_SieveOfEratosthenes(int &num) 
-{ 
-  std::vector<int> result;
-  std::vector<bool> visited(num+1,false); //Creates a boolean array visited, having size (o to n), all initialized as false.
-
-  if (num<=0)
+std::vector<int> CPPLib::kthPeek(std::vector<int> &input, int k)
+{    
+  if ((input.size()<=k)||(input.size()==0))
   {
       return {-1};
   }
-  else
+  std::vector<int> cmp;
+  std::vector<int> cmp1;
+  std::sort(input.begin(),input.end());
+  //int target = input[k-1];
+  for (unsigned i=k;i<input.size();i++)
   {
-  for(int i=2;i<=num;i++)
+      cmp.push_back(input[i]);
+  }
+  sort(cmp.begin(), cmp.end(), std::greater<int>());
+   for (auto i=0;i<k;i++)
+   {
+       cmp1.push_back(input[i]);
+   }
+  for (auto i=k-1;i>=0;i--)
   {
-    if(!visited[i]) // if any number is not visited, it is a prime number
-    {
-      result.push_back(i); //add them to the result vector
-      for(int j=i+i; j<=num; j+=i)
-      {
-        visited[j]=true; //all the multiples of that number are non prime, hence invalidate them.
-      }
-    }
+      cmp.insert(cmp.begin(),cmp1[i]);
   }
-  return result;
-  }
-}
-
-
-
-
-std::vector<int> Solution::FindPrimeRecursive(int &num)
-{
-  std::vector<int> result;
-  if (num<=0)
-  {
-      return {-1};
-  }
-  else
-  {
-      for(int i=2;i<=num;i++)
-      {
-        Solution::globalChk = i/2;
-        if(isPrime(i))
-            result.push_back(i);
-      }
-  }
-  return result;
-}
-
-
-bool Solution::isPrime(int &num){
-  if(globalChk==1){
-    return 1;
-  }else{
-    if(num%globalChk==0) {
-      return 0;
-    } else {
-      globalChk = globalChk-1;
-      isPrime(num);
-    }
-  }
+  return(cmp);
 }

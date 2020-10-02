@@ -4,14 +4,9 @@
 #include <string>
 #include <vector>
 
-class Solution {
+class CPPLib {
 public:
-  
-  std::vector<int> FindPrimeRecursive(int &num);
-  std::vector<int> Prime_SieveOfEratosthenes(int &num); 
-  int globalChk;  
-  bool isPrime(int &num); 
-
+  std::vector<int> kthPeek(std::vector<int> &input, int k);
 //private:
 };
 

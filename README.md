@@ -1,12 +1,21 @@
-# Prime_Recursive
-> Finds the Prime number of all numbers less than the num, in a C++ using *Sieve of Eratosthenes algorithm, i.e Non-Recursive method as well as recursive Method.
+# Vector_operation
+
+> Write a function ```void kthPeek(std::vector<int> &input, int k);``` that
+
+- Finds the kth smallest value of the vector, called target(the vector is not sorted)
+- It then rearranges the vector in such a way that it will have all the values lower than the target on the left side in ascending order and all the greater than the target value on the right side in descending order.
+
+Example:\
+Input: {637, 231, 123, 69, 43, 900, 10, 7, 21, 99, 0, 500}, k = 6.\
+Output: Output:{0, 7, 10, 21, 43, 69, 900, 637, 500, 231, 123, 99 }. (target = 69)
+
 
 ## Installation
 
 You can copy this using this command:
 
 ```bash
-git clone https://github.com/rksingh23/Prime_Recursive.git
+git clone https://github.com/rksingh23/Vector_operation.git
 ```
 
 ### Run main:
